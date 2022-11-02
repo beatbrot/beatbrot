@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Install native dependencies
+        run: sudo apt update && sudo apt install libcairo2-dev libpango1.0-dev ffmpeg -y
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
