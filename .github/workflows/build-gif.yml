@@ -2,6 +2,10 @@ name: Build GIF
 
 on:
   workflow_dispatch:
+  
+defaults:
+  run:
+    working-directory: greeting
 
 jobs:
   build-gif:
@@ -14,6 +18,6 @@ jobs:
           python-version: 3.10
           cache: pip
       - name: Install dependencies
-        run: pip install -r greeting/requirements.txt
+        run: pip install -r requirements.txt
       - name: Build GIF
-        run: manim greeting/scene.py
+        run: manim scene.py
