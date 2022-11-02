@@ -8,7 +8,7 @@
 
 - 🔭 Working as Software Development Engineer at [@vectorgrp](https://github.com/vectorgrp)
 
-- 🌱 Interested in Java, Rust and Software Architecture
+- 🌱 Interested in Java ☕, Rust 🦀 and Software Architecture 🏗️
 
 - ❓ Ask me about anything related to Java, JVM and Gradle
 
@@ -18,5 +18,3 @@
     <img src="https://komarev.com/ghpvc/?username=beatbrot&&style=flat-square" align="center" />
     </div>
 
-
-<br/>
