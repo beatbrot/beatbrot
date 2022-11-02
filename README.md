@@ -5,7 +5,7 @@
 ### <div align="center">I'm Christoph, a full-time Java Developer since 2020 🚀</div>
 
 
-- 🔭 Working as Software Development Engineer at @vectorgrp
+- 🔭 Working as Software Development Engineer at [@vectorgrp](https://github.com/vectorgrp)
 
 
 - 🌱 Interested in Java, Rust and Software Architecture
