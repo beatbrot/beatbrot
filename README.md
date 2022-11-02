@@ -5,7 +5,7 @@
 ### <div align="center">I'm Christoph, a full-time Java Developer since 2020 🚀</div>
 
 
-- 🔭 Working as Software Development Engineer at @vectorgrp [Github Profilinator](https://github.com/rishavanand/github-profilinator)
+- 🔭 Working as Software Development Engineer at @vectorgrp
 
 
 - 🌱 Interested in Java, Rust and Software Architecture
