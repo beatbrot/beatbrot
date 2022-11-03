@@ -4,6 +4,8 @@ import numpy as np
 
 import requests
 
+greetings = open("greetings.txt", mode="r").readlines()
+
 
 class EmojiImageMobject(ImageMobject):
     def __init__(self, **kwargs):
@@ -17,16 +19,14 @@ class DefaultTemplate(Scene):
     BASE_SCALE = 1.9
 
     def construct(self):
-        x = self.build_text("Hello")
+        x = self.build_text(greetings[0])
         self.add(*x)
         self.wiggle(x)
-        x = self.replace(x, "Namaste")
-        x = self.replace(x, "Bonjour")
-        x = self.replace(x, "Ciao")
-        x = self.replace(x, "Hola")
-        x = self.replace(x, "Nĭ Hăo")
-        x = self.replace(x, "Hallo")
-        x = self.replace(x, "Hello")
+
+        for g in greetings[1:]:
+            x = self.replace(x, g)
+
+        x = self.replace(x, greetings[0])
 
     def replace(self, old, new_text):
         new = self.build_text(new_text)
