@@ -23,8 +23,10 @@ jobs:
           cache: 'pip'
       - name: Install dependencies
         run: pip install -r requirements.txt
+      - name: Install gifski
+        run: cargo install gifski
       - name: Build GIF
-        run: manim scene.py --format=gif -o anim.gif
+        run: ./build-gif.sh
       - name: Commit updated GIF
         uses: stefanzweifel/git-auto-commit-action@v4
         with:

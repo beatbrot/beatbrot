@@ -4,7 +4,7 @@ import numpy as np
 
 import requests
 
-greetings = open("greetings.txt", mode="r").readlines()
+greetings = [s.strip() for s in open("greetings.txt", mode="r").readlines()]
 
 
 class EmojiImageMobject(ImageMobject):
@@ -16,7 +16,7 @@ class EmojiImageMobject(ImageMobject):
 
 
 class DefaultTemplate(Scene):
-    BASE_SCALE = 1.9
+    BASE_SCALE = 3.8
 
     def construct(self):
         x = self.build_text(greetings[0])
@@ -35,7 +35,7 @@ class DefaultTemplate(Scene):
 
     def wiggle(self, state):
         self.play(Wiggle(state[1]))
-        self.wait()
+        self.wait(2.3)
 
     def transform(self, old, new):
         old_len = len(old[2])
@@ -51,7 +51,7 @@ class DefaultTemplate(Scene):
         self.play(AnimationGroup(*anims))
         self.clear()
         self.add(*new)
-        self.wait()
+        self.wait(2.3)
 
     def build_text(self, text):
         intro = Text("<", color="black", font="Montserrat",

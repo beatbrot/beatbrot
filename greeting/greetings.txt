@@ -1,7 +1,6 @@
 Hello
-Namaste
 Bonjour
-Ciao
+Namaste
 Hola
 Nĭ Hăo
 Hallo
