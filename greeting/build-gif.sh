@@ -1,5 +1,5 @@
 #! /bin/bash
-manim scene.py -o anim.mp4
+manim scene.py -o anim.gif --format=gif -t
 mkdir frame
-ffmpeg -i media/videos/scene/300p25/anim.mp4 frame/frame%04d.png
+ffmpeg -i media/videos/scene/600p25/anim.gif frame/frame%04d.png
 gifski -o anim.gif --width 600 frame/frame*.png
