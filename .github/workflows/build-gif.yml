@@ -25,3 +25,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Build GIF
         run: manim scene.py
+      - name: Commit updated GIF
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update GIF
+          file_pattern: "*.gif"
