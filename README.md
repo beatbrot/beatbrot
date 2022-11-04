@@ -1,5 +1,9 @@
 <div align="center">
-    <img src="/greeting/anim.gif" align="center" style="width: 100%" />
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="/greeting/anim-dark.gif">
+      <source media="(prefers-color-scheme: light)" srcset="/greeting/anim-light.gif">
+      <img src="/greeting/anim-light.gif" align="center" style="width: 100%" />
+    </picture>
     </div>
 
 ### <div align="center">I'm Christoph, a full-time Java Developer since 2020 🚀</div>
