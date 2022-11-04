@@ -1,5 +1,5 @@
 #! /bin/bash
-manim scene.py -o anim.gif --format=gif -t
-mkdir frame
-ffmpeg -i media/videos/scene/600p25/anim.gif frame/frame%04d.png
-gifski -o anim.gif --width 600 frame/frame*.png
+manim scene.py BaseAnim --format=png
+manim scene.py DarkModeAnim -t --format=png
+gifski -o anim-light.gif --width 600 media/images/scene/BaseAnim*.png
+gifski -o anim-dark.gif --width 600 media/images/scene/DarkModeAnim*.png

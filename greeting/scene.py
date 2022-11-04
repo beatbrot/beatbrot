@@ -1,21 +1,23 @@
+import os
 from manim import *
 from PIL import Image
 import numpy as np
 
 import requests
 
-greetings = [s.strip() for s in open("greetings.txt", mode="r").readlines()]
+dark_mode = "DARK" in os.environ.keys()
+greetings = [s.strip() for s in open("greetings.txt", mode="r", encoding="UTF-8").readlines()]
 
 
 class EmojiImageMobject(ImageMobject):
     def __init__(self, **kwargs):
-        url = f"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/346/waving-hand_1f44b.png"
+        url = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/346/waving-hand_1f44b.png"
         im = Image.open(requests.get(url, stream=True).raw)
         emoji_img = np.array(im.convert("RGBA"))
         ImageMobject.__init__(self, emoji_img, **kwargs)
 
 
-class DefaultTemplate(Scene):
+class BaseAnim(Scene):
     BASE_SCALE = 3.8
 
     def construct(self):
@@ -54,10 +56,18 @@ class DefaultTemplate(Scene):
         self.wait(2.3)
 
     def build_text(self, text):
-        intro = Text("<", color="black", font="Montserrat",
+        intro = Text("<", color=self.text_color(), font="Montserrat",
                      weight="ULTRAHEAVY").scale(self.BASE_SCALE)
         em = EmojiImageMobject().scale(self.BASE_SCALE * 1.2)
         rest = Text(f"{text}, World/>", font="Montserrat",
-                    color="black", weight="ULTRAHEAVY").scale(self.BASE_SCALE)
+                    color=self.text_color(), weight="ULTRAHEAVY").scale(self.BASE_SCALE)
         Group(intro, em, rest).arrange(RIGHT)
         return [intro, em, rest]
+
+    def text_color(self):
+        return "black"
+
+class DarkModeAnim(BaseAnim):
+
+    def text_color(self):
+        return "white"
