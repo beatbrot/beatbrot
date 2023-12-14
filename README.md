@@ -16,8 +16,6 @@
 
 - ❓ Ask me about anything related to Java, JVM and Gradle
 
-- ⚡ Compile-safe everything!
-
 <div align="center">
     <img src="https://komarev.com/ghpvc/?username=beatbrot&&style=flat-square" align="center" />
 </div>
